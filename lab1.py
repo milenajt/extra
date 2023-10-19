@@ -1,0 +1,16 @@
+print("Добро пожаловать! Пожалуйста, заполните анкету")
+
+first_name = input("Введите Ваше имя: ").title()
+last_name = input("Введите Вашу фамилию: ").title()
+birth_date = int(input("Введите ваш год рождения: "))
+is_experienced = input("Изучали ли вы раньше языки программирования? ")
+is_liked = input("Нравится ли Вам данный курс? ")
+expectations = input("Что Вы ожидаете в дальнейших занятиях? ")
+
+print()
+print("Вы заполнили такие данные: ")
+print(f'Вас зовут: {first_name} {last_name}')
+print(f'Вам {2023-birth_date} лет')
+print(f'Ваш ответ к первому вопросу: {is_experienced}')
+print(f'Ваш ответ к второму вопросу: {is_liked}')
+print(f'Ваш ответ к третьему вопросу: {expectations}')
