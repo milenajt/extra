@@ -36,7 +36,7 @@ commands = {1: add, 2: substract, 3: multiply,
 while True:
     options()
     operation = int(input('Enter the number of an option: '))
-    if 1<=operation<=4:
+    if 1 <= operation <= 4:
         a = int(input('Insert a: '))
         b = int(input('Insert b: '))
         print(f'Answer: {commands[operation](a,b)}')
