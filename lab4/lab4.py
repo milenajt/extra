@@ -55,7 +55,7 @@ def create_user():
 def show_list():
     for user in users_list:
         for k, v in user.items():
-            if k != 'Password'
+            if k != 'Password':
                 print(f'{k}: {v}', end='; ')
         print()
 
