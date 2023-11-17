@@ -55,7 +55,8 @@ def create_user():
 def show_list():
     for user in users_list:
         for k, v in user.items():
-            print(f'{k}: {v}', end='; ')
+            if k != 'Password'
+                print(f'{k}: {v}', end='; ')
         print()
 
 
@@ -100,5 +101,5 @@ while True:
         print("Bye!")
         break
     else:
-        print("There is no such option, please enter again")
+        print("There is no such option, please enter again.")
     print()
