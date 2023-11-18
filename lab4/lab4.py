@@ -9,13 +9,11 @@ def check_username():
     while True:
         username = input('Username: ').lower()
         username_taken = False
-
         for user in users_list:
             if username == user['Username'].lower():
                 print("This username is already taken.")
                 username_taken = True
                 break
-
         if not username_taken:
             return username
 
