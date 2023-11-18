@@ -57,7 +57,6 @@ def show_list():
         for k, v in user.items():
             if k != 'Password':
                 print(f'{k}: {v}', end='; ')
-        print()
 
 
 def delete_user(username):
@@ -66,8 +65,8 @@ def delete_user(username):
             users_list.remove(user)
             print(f"User {username} is deleted successfully.")
             break
-        else:
-            print('There is no such username.')
+    else:
+        print(f'There is no user named {username}.')
 
 
 def authorization():
