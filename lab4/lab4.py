@@ -47,10 +47,7 @@ def create_user():
 
 def show_list():
     for user in users_list:
-        for k, v in user.items():
-            if k != 'Password':
-                print(f'{k}: {v}', end='; ')
-        print()
+        print('; '.join(f'{k}: {v}' for k,v in user.items() if k!= 'Password'))
 
 
 def delete_user(login):
@@ -69,8 +66,8 @@ def authorization(login, passw):
             print("You are successfully logged in to the system.")
             print(f"Welcome back, {user['Name']}!")
             break
-        else:
-            print('Your username or password is wrong.')
+    else:
+        print('Your username or password is wrong.')
 
 
 while True:
@@ -80,7 +77,6 @@ while True:
         case '1':
             new_user = create_user()
             users_list.append(new_user)
-            print("This user is created successfully!")
         case '2':
             show_list()
         case '3':
