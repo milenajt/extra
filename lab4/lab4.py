@@ -5,29 +5,29 @@ def greeting():
     print('''Choose one option:\n1. Create user\n2. Show list of users\n3. Delete user from List\n4. Authorization\n5. Exit''')
 
 
-def check_username():
+def check_login():
     while True:
-        username = input('Username: ').lower()
-        username_taken = False
+        login = input('Username: ').lower()
+        login_taken = False
         for user in users_list:
-            if username == user['Username'].lower():
+            if login == user['Username'].lower():
                 print("This username is already taken.")
-                username_taken = True
+                login_taken = True
                 break
-        if not username_taken:
-            return username
+        if not login_taken:
+            return login
 
 
 def check_password():
     while True:
-        password = input('Password: ')
-        if len(password) >= 8:
-            has_upper = any(map(lambda x: x.isupper(), password))
-            has_lower = any(map(lambda x: x.islower(), password))
-            has_digit = any(map(lambda x: x.isdigit(), password))
-            has_other_sym = all(map(lambda x: x.isalnum(), password))
+        passw = input('Password: ')
+        if len(passw) >= 8:
+            has_upper = any(map(lambda x: x.isupper(), passw))
+            has_lower = any(map(lambda x: x.islower(), passw))
+            has_digit = any(map(lambda x: x.isdigit(), passw))
+            has_other_sym = all(map(lambda x: x.isalnum(), passw))
             if all((has_upper, has_lower, has_digit, has_other_sym)):
-                return password
+                return passw
             else:
                 print('The password should contain A-Z, a-z, 0-9.')
         else:
@@ -40,7 +40,7 @@ def create_user():
         'Surname': input('Surname: ').title(),
         'Age': input('Age: '),
         'Address': input('Address: ').title(),
-        'Username': check_username(),
+        'Username': check_login(),
         'Password': check_password(),
     }
 
@@ -53,22 +53,22 @@ def show_list():
         print()
 
 
-def delete_user(username):
+def delete_user(login):
     for user in users_list:
-        if username == user['Username']:
+        if login == user['Username']:
             users_list.remove(user)
-            print(f"User {username} is deleted successfully.")
+            print(f"User {login} is deleted successfully.")
             break
     else:
-        print(f'There is no user named {username}.')
+        print(f'There is no user named {login}.')
 
 
-def authorization(username, password):
+def authorization(login, passw):
     for user in users_list:
-        if username.lower() == user['Username'] and password == user['Password']:
+        if login.lower() == user['Username'] and passw == user['Password']:
             print("You are successfully logged in to the system.")
             print(f"Welcome back, {user['Name']}!")
-            return True
+            break
         else:
             print('Your username or password is wrong.')
 
