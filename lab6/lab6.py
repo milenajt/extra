@@ -83,11 +83,10 @@ class CommandPrompt:
 
 
 cmd = CommandPrompt()
-current_dir = cmd.current_dir
 start = time.time()
 commands = ['cd', 'dir', 'exit', 'mkdir', 'rmdir', 'delete', 'rename', 'read', 'create']
 while True:
-    request = input(current_dir + '>').split()
+    request = input(cmd.current_dir + '>').split()
     if len(request) == 1:
         if request[0] == 'cd':
             print(cmd.show_current_dir())
